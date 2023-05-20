@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:10:17 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 19:08:23 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:25:13 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,22 @@ int	main(int argc, char **argv)
 	launch_mlx(instance);
 }
 
-void	aff_map(char **map, int height)
-{
-	int	i;
-	int	j;
+// void	aff_map(char **map, int height)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	while (i < height)
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			printf("%c", map[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-	printf("\n");
-}
+// 	i = 0;
+// 	while (i < height)
+// 	{
+// 		j = 0;
+// 		while (map[i][j])
+// 		{
+// 			printf("%c", map[i][j]);
+// 			j++;
+// 		}
+// 		printf("\n");
+// 		i++;
+// 	}
+// 	printf("\n");
+// }

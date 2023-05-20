@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 20:50:28 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:04:05 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_game
 	int		*exit;
 	int		items;
 	int		count;
+	int		moves;
 
 	int		frame;
 	void	*mlx;
