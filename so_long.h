@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 18:33:06 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:50:28 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,17 @@ typedef struct s_img
 
 typedef struct s_game
 {
-	int		frame;
-	void	*mlx;
-	void	*win;
 	char	**map;
 	int		height;
 	int		width;
 	int		*pos;
+	int		*exit;
+	int		items;
+	int		count;
+
+	int		frame;
+	void	*mlx;
+	void	*win;
 	t_img	img;
 }	t_instance;
 

@@ -6,13 +6,13 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:25:57 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 17:00:14 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:53:37 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static int	*get_pos(t_instance *instance)
+static int	*get_pos(t_instance *instance, char c)
 {
 	int	i;
 	int	j;
@@ -27,7 +27,7 @@ static int	*get_pos(t_instance *instance)
 		j = 0;
 		while (j < instance->width)
 		{
-			if (instance->map[i][j] == 'P')
+			if (instance->map[i][j] == c)
 			{
 				pos[0] = i;
 				pos[1] = j;
@@ -52,7 +52,8 @@ t_instance	*build_instance(char *file)
 	instance->map = parse_map(file, instance->height);
 	if (!instance->map)
 		return (NULL);
-	instance->pos = get_pos(instance);
+	instance->pos = get_pos(instance, 'P');
+	instance->exit = get_pos(instance, 'E');
 	check_map(instance);
 	return (instance);
 }

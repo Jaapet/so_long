@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:12:03 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 16:59:15 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:51:48 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static void	check_chars(t_instance *instance)
 		i++;
 	}
 	counter(spe_chars);
+	instance->items = spe_chars[2];
 }
 
 static void	check_walls(t_instance *instance)
