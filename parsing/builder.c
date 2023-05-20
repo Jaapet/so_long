@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:25:57 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 20:53:37 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:57:50 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_instance	*build_instance(char *file)
 		return (NULL);
 	instance->pos = get_pos(instance, 'P');
 	instance->exit = get_pos(instance, 'E');
+	instance->count = 0;
 	check_map(instance);
 	return (instance);
 }
