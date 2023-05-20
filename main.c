@@ -6,11 +6,24 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:10:17 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/19 14:42:21 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/19 16:30:39 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static int	is_ber(char *file)
+{
+	int	i;
+
+	i = 0;
+	while (file[i] != '.' && file[i])
+		i++;
+	if (file[i] == '.' && file[i + 1] == 'b' && file[i + 2] == 'e'
+		&& file[i + 3] == 'r' && !file[i + 4])
+		return (1);
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -18,15 +31,9 @@ int	main(int argc, char **argv)
 
 	if (argc != 2 || !is_ber(argv[1]))
 		throw_error();
-	instance = malloc(sizeof(t_instance));
-	if (!instance)
-		return (0);
-	instance->height = get_height(argv[1]);
-	instance->width = get_width(argv[1]);
-	instance->map = parse_map(argv[1], instance->height);
-	if (!instance->map)
-		return (0);
-	//check_map(instance);
+	instance = build_instance(argv[1]);
+	
+	
 	int i = 0;
 	while (i < instance->height)
 	{

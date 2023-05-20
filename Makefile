@@ -6,16 +6,19 @@
 #    By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:05:43 by ndesprez          #+#    #+#              #
-#    Updated: 2023/05/19 14:42:00 by ndesprez         ###   ########.fr        #
+#    Updated: 2023/05/19 16:31:35 by ndesprez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES	= gnl/get_next_line.c\
 gnl/get_next_line_utils.c\
 checker.c\
+path_checker.c\
 error.c\
 main.c\
-parser.c
+builder.c\
+parser.c\
+utils.c
 
 NAME = so_long
 
