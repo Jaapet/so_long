@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:19:18 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 19:20:13 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:36:24 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,21 @@ int	is_valid_path(char **map, int height, int width)
 	return (1);
 }
 
-static int	search(char **map, int i, int j, t_instance *instance)
+int	search(char **map, int i, int j, t_instance *instance)
 {
 	int	c;
 
 	c = 0;
-	if (map[i][j] == 'E')
+	if (map[i + 1][j] == '1' && map[i - 1][j] == '1'
+		&& map[i][j + 1] == '1' && map[i][j - 1] == '1')
 	{
-		//aff_map(map, instance->height);
+		aff_map(map, instance->height);
 		map[i][j] = '1';
-		return (is_valid_path(map, instance->height, instance->width));
+		c += is_valid_path(map, instance->height, instance->width);
 	}
 	else
 	{
-		//aff_map(map, instance->height);
+		aff_map(map, instance->height);
 		map[i][j] = '1';
 		if (map[i + 1][j] != '1')
 			c += search(map, i + 1, j, instance);
@@ -77,8 +78,8 @@ static int	search(char **map, int i, int j, t_instance *instance)
 			c += search(map, i, j + 1, instance);
 		if (map[i][j - 1] != '1')
 			c += search(map, i, j - 1, instance);
-		return (c);
 	}
+	return (c);
 }
 
 void	check_path(t_instance *instance)
