@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:19:18 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 16:59:25 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:20:13 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@ static int	search(char **map, int i, int j, t_instance *instance)
 	c = 0;
 	if (map[i][j] == 'E')
 	{
+		//aff_map(map, instance->height);
 		map[i][j] = '1';
 		return (is_valid_path(map, instance->height, instance->width));
 	}
 	else
 	{
+		//aff_map(map, instance->height);
 		map[i][j] = '1';
 		if (map[i + 1][j] != '1')
 			c += search(map, i + 1, j, instance);

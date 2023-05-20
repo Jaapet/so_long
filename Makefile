@@ -6,7 +6,7 @@
 #    By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:05:43 by ndesprez          #+#    #+#              #
-#    Updated: 2023/05/20 17:02:33 by ndesprez         ###   ########.fr        #
+#    Updated: 2023/05/20 18:15:21 by ndesprez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ parsing/utils.c\
 mlx/mlx.c\
 mlx/mlx_utils.c\
 mlx/event_listener.c\
+mlx/moves.c\
 main.c
 
 NAME = so_long
