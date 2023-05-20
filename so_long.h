@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 15:07:38 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:54:15 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,14 @@ char		**ft_free(char **list, int len);
 
 /*------MLX------*/
 void		launch_mlx(t_instance *game);
+
+/*------MLX_UTILS------*/
+int			end_instance(void);
+void		put_img(t_instance *instance, void *img, int y, int x);
+void		*xpm_img(t_instance *instance, char *name);
+void		display(t_instance *instance, int i, int j);
+
+/*------EVENT_LISTENER------*/
+int			key_press(int key, t_instance *instance);
 
 #endif

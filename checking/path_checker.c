@@ -6,11 +6,11 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:19:18 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 12:05:19 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:59:25 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static char	**copy_map(char **map, int height, int width)
 {

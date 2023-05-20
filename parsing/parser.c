@@ -6,11 +6,11 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:32:04 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 15:18:17 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:00:32 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	get_height(char *file)
 {

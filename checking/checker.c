@@ -6,11 +6,11 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:12:03 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 11:41:44 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:59:15 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static void	check_rect(t_instance *instance)
 {

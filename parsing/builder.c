@@ -6,11 +6,11 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:25:57 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/19 21:22:05 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:00:14 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	*get_pos(t_instance *instance)
 {

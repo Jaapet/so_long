@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   event_listener.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 11:21:31 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/19 11:22:06 by ndesprez         ###   ########.fr       */
+/*   Created: 2023/05/20 16:48:38 by ndesprez          #+#    #+#             */
+/*   Updated: 2023/05/20 16:59:47 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-static void	ft_putchar(char c)
+int	key_press(int key, t_instance *instance)
 {
-	write(1, &c, 1);
-}
-
-static void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-void	throw_error(void)
-{
-	write(2, "Error\n", 6);
-	exit(EXIT_FAILURE);
+	if (key == 53)
+		exit(0);
+	if (key == 13)
+		printf("monter\n");
+	return (0);
 }

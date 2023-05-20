@@ -6,20 +6,22 @@
 #    By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:05:43 by ndesprez          #+#    #+#              #
-#    Updated: 2023/05/20 15:48:25 by ndesprez         ###   ########.fr        #
+#    Updated: 2023/05/20 17:02:33 by ndesprez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES	= gnl/get_next_line.c\
 gnl/get_next_line_utils.c\
-checker.c\
-path_checker.c\
-error.c\
-main.c\
-builder.c\
-parser.c\
-utils.c\
-mlx.c
+checking/checker.c\
+checking/path_checker.c\
+parsing/error.c\
+parsing/builder.c\
+parsing/parser.c\
+parsing/utils.c\
+mlx/mlx.c\
+mlx/mlx_utils.c\
+mlx/event_listener.c\
+main.c
 
 NAME = so_long
 

@@ -6,23 +6,13 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 19:37:13 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 15:48:42 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:59:57 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-int	end_instance(void)
-{
-	exit(0);
-}
-
-void	put_img(t_instance *instance, void *img, int y, int x)
-{
-	mlx_put_image_to_window(instance->mlx, instance->win, img, x * SIZE, y * SIZE);
-}
-
-int	run(t_instance *instance)
+static int	run(t_instance *instance)
 {
 	int	i;
 	int	j;
@@ -36,16 +26,7 @@ int	run(t_instance *instance)
 		j = 0;
 		while (instance->map[i][j])
 		{
-			if (instance->map[i][j] == '0')
-				put_img(instance, instance->img.floor, i, j);
-			if (instance->map[i][j] == '1')
-				put_img(instance, instance->img.wall, i, j);
-			if (instance->map[i][j] == 'E')
-				put_img(instance, instance->img.exit, i, j);
-			if (instance->map[i][j] == 'P')
-				put_img(instance, instance->img.player, i, j);
-			if (instance->map[i][j] == 'C')
-				put_img(instance, instance->img.item, i, j);
+			display(instance, i, j);
 			j++;
 		}
 		i++;
@@ -53,26 +34,7 @@ int	run(t_instance *instance)
 	return (0);
 }
 
-int	key_press(int key, t_instance *instance)
-{
-	if (key == 53)
-		exit(0);
-	if (key == 13)
-		printf("monter\n");
-	return (0);
-}
-void	*xpm_img(t_instance *instance, char *name)
-{
-	void	*img;
-	int		a;
-
-	img = mlx_xpm_file_to_image(instance->mlx, name, &(a), &(a));
-	if (!img)
-		exit(1);
-	return (img);
-}
-
-void	init_img(t_instance *instance)
+static void	init_img(t_instance *instance)
 {
 	instance->img.floor = xpm_img(instance, "./xpm/chars/floor.xpm");
 	instance->img.player = xpm_img(instance, "./xpm/chars/player.xpm");

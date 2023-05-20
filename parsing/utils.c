@@ -6,11 +6,11 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:14:32 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/19 19:26:50 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:00:39 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	ft_strlen(char *str)
 {
