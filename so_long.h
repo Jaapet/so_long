@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 11:38:30 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:07:38 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_img
 	void	*floor;
 	void	*wall;
 	void	*player;
-	void	*collec;
+	void	*item;
 	void	*exit;
 }	t_img;
 
@@ -72,5 +72,8 @@ void		throw_error(void);
 int			ft_strlen(char *str);
 char		*ft_strdup(const char *src);
 char		**ft_free(char **list, int len);
+
+/*------MLX------*/
+void		launch_mlx(t_instance *game);
 
 #endif

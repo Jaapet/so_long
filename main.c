@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:10:17 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/19 16:30:39 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:48:08 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 		throw_error();
 	instance = build_instance(argv[1]);
 	
-	
+	launch_mlx(instance);
 	int i = 0;
 	while (i < instance->height)
 	{

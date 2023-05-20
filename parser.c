@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:32:04 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/19 12:47:59 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:18:17 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	**parse_map(char *file, int size)
 	char	**map;
 	int		i;
 
-	map = malloc(sizeof(char *) * size);
+	map = malloc(sizeof(char *) * (size + 1));
 	if (!map)
 		return (NULL);
 	fd = open(file, O_RDONLY);
@@ -57,6 +57,7 @@ char	**parse_map(char *file, int size)
 		i++;
 		size--;
 	}
+	map[i] = NULL;
 	close(fd);
 	return (map);
 }

@@ -6,7 +6,7 @@
 #    By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:05:43 by ndesprez          #+#    #+#              #
-#    Updated: 2023/05/19 16:31:35 by ndesprez         ###   ########.fr        #
+#    Updated: 2023/05/20 15:48:25 by ndesprez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ error.c\
 main.c\
 builder.c\
 parser.c\
-utils.c
+utils.c\
+mlx.c
 
 NAME = so_long
 
