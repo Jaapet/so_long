@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 12:57:16 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 13:36:40 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void		aff_map(char **map, int height);
 void		launch_mlx(t_instance *game);
 
 /*------MLX_UTILS------*/
-int			end_instance(void);
+int			end_instance(t_instance *instance);
 void		put_img(t_instance *instance, void *img, int y, int x);
 void		*xpm_img(t_instance *instance, char *name);
 void		display(t_instance *instance, int i, int j);

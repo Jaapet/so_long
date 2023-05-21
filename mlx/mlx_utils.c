@@ -6,13 +6,13 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:39:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:11:00 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 13:48:38 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	end_instance(void)
+int	end_instance(t_instance *instance)
 {
 	exit(0);
 }
@@ -30,7 +30,10 @@ void	*xpm_img(t_instance *instance, char *name)
 
 	img = mlx_xpm_file_to_image(instance->mlx, name, &(a), &(a));
 	if (!img)
+	{
+		ft_printf("img '%s' does not exist", name);
 		exit(1);
+	}
 	return (img);
 }
 

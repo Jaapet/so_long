@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 19:37:13 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:25:32 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 13:48:57 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	launch_mlx(t_instance *instance)
 	init_img(instance);
 	mlx_loop_hook(instance->mlx, run, instance);
 	mlx_hook(instance->win, 2, 0, key_press, instance);
-	mlx_hook(instance->win, 17, 0, end_instance, NULL);
+	mlx_hook(instance->win, 17, 0, end_instance, instance);
 	mlx_loop(instance->mlx);
 }

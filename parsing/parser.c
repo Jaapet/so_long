@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:32:04 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 12:35:52 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 13:44:39 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 
 int	get_height(char *file)
 {
-	int	fd;
-	int	i;
+	int		fd;
+	int		i;
+	char	*line;
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 		throw_error();
 	i = 0;
-	while (get_next_line(fd))
+	line = get_next_line(fd);
+	while (line)
+	{
+		free(line);
+		line = get_next_line(fd);
 		i++;
+	}
 	close(fd);
 	return (i);
 }
@@ -39,6 +45,7 @@ int	get_width(char *file)
 	while (line[i])
 		i++;
 	close(fd);
+	free(line);
 	return (i);
 }
 
