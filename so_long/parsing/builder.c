@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:25:57 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 12:33:41 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:41:24 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_instance	*build_instance(char *file)
 		return (NULL);
 	instance->height = get_height(file);
 	if (!instance->height)
-		throw_error();
+		throw_error("map is empty\n");
 	instance->width = get_width(file);
 	instance->map = parse_map(file, instance->height);
 	if (!instance->map)

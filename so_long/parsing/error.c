@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:21:31 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:54:04 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:45:19 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(2, &c, 1);
 }
 
 static void	ft_putstr(char *str)
@@ -29,8 +29,9 @@ static void	ft_putstr(char *str)
 	}
 }
 
-void	throw_error(void)
+void	throw_error(char *msg)
 {
 	write(2, "Error\n", 6);
+	ft_putstr(msg);
 	exit(EXIT_FAILURE);
 }

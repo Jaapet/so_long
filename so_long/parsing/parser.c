@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:32:04 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:44:39 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:32:03 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	get_height(char *file)
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		throw_error();
+		throw_error("map file is not valid\n");
 	i = 0;
 	line = get_next_line(fd);
 	while (line)

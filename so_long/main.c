@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:10:17 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:50:36 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:28:34 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	t_instance	*instance;
 
 	if (argc != 2 || !is_ber(argv[1]))
-		throw_error();
+		throw_error("map has to be .ber\n");
 	instance = build_instance(argv[1]);
 	if (instance)
 		launch_mlx(instance);

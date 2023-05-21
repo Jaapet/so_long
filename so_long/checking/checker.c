@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:12:03 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 20:51:48 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:36:49 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	check_rect(t_instance *instance)
 	while (i < instance->height)
 	{
 		if (ft_strlen(instance->map[i]) != instance->width)
-			throw_error();
+			throw_error("map has to be a rectangle\n");
 		i++;
 	}
 }
@@ -28,9 +28,9 @@ static void	check_rect(t_instance *instance)
 static void	counter(int *count)
 {
 	if (count[0] != 1 || count[1] != 1)
-		throw_error();
+		throw_error("map must contain 1 player and 1 exit\n");
 	if (count[2] == 0)
-		throw_error();
+		throw_error("map must contain at least 1 collectible\n");
 }
 
 static void	check_chars(t_instance *instance)
@@ -53,7 +53,7 @@ static void	check_chars(t_instance *instance)
 			else if (instance->map[i][j] == 'C')
 				spe_chars[2]++;
 			else if (instance->map[i][j] != '0' && instance->map[i][j] != '1')
-				throw_error();
+				throw_error("map has an invalid character\n");
 			j++;
 		}
 		i++;
@@ -75,7 +75,7 @@ static void	check_walls(t_instance *instance)
 		{
 			if ((i == 0 || i == instance->height - 1 || j == 0
 					|| j == instance->width - 1) && instance->map[i][j] != '1')
-				throw_error();
+				throw_error("map must have plain borders\n");
 			j++;
 		}
 		i++;

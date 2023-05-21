@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:36:40 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:30:13 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char		*ft_strjoin_bufs(char *s1, char const *s2);
 int			ft_printf(const char *format, ...);
 
 /*------ERROR------*/
-void		throw_error(void);
+void		throw_error(char *msg);
 
 /*------UTILS------*/
 int			ft_strlen(char *str);

@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 19:37:13 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:48:57 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 18:10:02 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	run(t_instance *instance)
 static void	init_img(t_instance *instance)
 {
 	instance->img.floor = xpm_img(instance, "./xpm/chars/floor.xpm");
-	instance->img.player = xpm_img(instance, "./xpm/chars/player_t.xpm");
+	instance->img.player = xpm_img(instance, "./xpm/chars/player.xpm");
 	instance->img.wall = xpm_img(instance, "./xpm/chars/wall.xpm");
 	instance->img.item = xpm_img(instance, "./xpm/chars/item.xpm");
 	instance->img.exit = xpm_img(instance, "./xpm/chars/exit.xpm");
