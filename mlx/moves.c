@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:03:30 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 21:25:39 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 12:58:08 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	up(t_instance *instance)
 			instance->map[instance->pos[0]][instance->pos[1]] = '0';
 		instance->pos[0]--;
 		instance->moves++;
-		printf("moves = %d\n", instance->moves);
+		ft_printf("moves = %d\n", instance->moves);
 	}
 }
 
@@ -50,7 +50,7 @@ void	down(t_instance *instance)
 			instance->map[instance->pos[0]][instance->pos[1]] = '0';
 		instance->pos[0]++;
 		instance->moves++;
-		printf("moves = %d\n", instance->moves);
+		ft_printf("moves = %d\n", instance->moves);
 	}
 }
 
@@ -71,7 +71,7 @@ void	left(t_instance *instance)
 			instance->map[instance->pos[0]][instance->pos[1]] = '0';
 		instance->pos[1]--;
 		instance->moves++;
-		printf("moves = %d\n", instance->moves);
+		ft_printf("moves = %d\n", instance->moves);
 	}
 }
 
@@ -92,6 +92,6 @@ void	right(t_instance *instance)
 			instance->map[instance->pos[0]][instance->pos[1]] = '0';
 		instance->pos[1]++;
 		instance->moves++;
-		printf("moves = %d\n", instance->moves);
+		ft_printf("moves = %d\n", instance->moves);
 	}
 }

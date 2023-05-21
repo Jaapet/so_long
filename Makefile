@@ -6,23 +6,24 @@
 #    By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:05:43 by ndesprez          #+#    #+#              #
-#    Updated: 2023/05/20 18:15:21 by ndesprez         ###   ########.fr        #
+#    Updated: 2023/05/21 12:59:19 by ndesprez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES	= gnl/get_next_line.c\
-gnl/get_next_line_utils.c\
-checking/checker.c\
-checking/path_checker.c\
-parsing/error.c\
-parsing/builder.c\
-parsing/parser.c\
-parsing/utils.c\
-mlx/mlx.c\
-mlx/mlx_utils.c\
-mlx/event_listener.c\
-mlx/moves.c\
-main.c
+	gnl/get_next_line_utils.c\
+	ft_printf/ft_printf.c\
+	checking/checker.c\
+	checking/path_checker.c\
+	parsing/error.c\
+	parsing/builder.c\
+	parsing/parser.c\
+	parsing/utils.c\
+	mlx/mlx.c\
+	mlx/mlx_utils.c\
+	mlx/event_listener.c\
+	mlx/moves.c\
+	main.c
 
 NAME = so_long
 

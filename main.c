@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:10:17 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 21:25:13 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 12:46:08 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int	main(int argc, char **argv)
 	if (argc != 2 || !is_ber(argv[1]))
 		throw_error();
 	instance = build_instance(argv[1]);
-	launch_mlx(instance);
+	if (instance)
+		launch_mlx(instance);
+	return (0);
 }
 
 // void	aff_map(char **map, int height)
