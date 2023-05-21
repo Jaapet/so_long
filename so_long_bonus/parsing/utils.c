@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:14:32 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 17:00:39 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 19:38:43 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ char	**ft_free(char **list, int len)
 	}
 	free(list);
 	return (NULL);
+}
+
+int	is_valid_char(char c)
+{
+	if (c != '0' && c != '1' && c != 'V')
+		return (0);
+	return (1);
 }

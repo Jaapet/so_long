@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 15:30:13 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:48:38 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_game
 	int		items;
 	int		count;
 	int		moves;
+	int		kills;
 
 	int		frame;
 	void	*mlx;
@@ -55,6 +56,7 @@ char		**parse_map(char *file, int size);
 t_instance	*build_instance(char *file);
 
 /*------CHECKING------*/
+int			is_valid_char(char c);
 void		check_path(t_instance *instance);
 void		check_map(t_instance *instance);
 
@@ -73,8 +75,9 @@ char		*ft_strjoin_bufs(char *s1, char const *s2);
 /*------PRINTF------*/
 int			ft_printf(const char *format, ...);
 
-/*------ERROR------*/
+/*------THROW------*/
 void		throw_error(char *msg);
+void		throw_msg(char c);
 
 /*------UTILS------*/
 int			ft_strlen(char *str);
@@ -90,14 +93,16 @@ int			end_instance(t_instance *instance);
 void		put_img(t_instance *instance, void *img, int y, int x);
 void		*xpm_img(t_instance *instance, char *name);
 void		display(t_instance *instance, int i, int j);
+void		info(t_instance *instance);
 
 /*------EVENT_LISTENER------*/
 int			key_press(int key, t_instance *instance);
 
 /*------MOVES------*/
-void		up(t_instance *instance);
-void		down(t_instance *instance);
-void		left(t_instance *instance);
-void		right(t_instance *instance);
+void		up(t_instance *n);
+void		down(t_instance *n);
+void		left(t_instance *n);
+void		right(t_instance *n);
+void		attack(t_instance *n);
 
 #endif

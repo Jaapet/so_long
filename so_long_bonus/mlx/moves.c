@@ -6,92 +6,91 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:03:30 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:50:15 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:47:47 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	up(t_instance *instance)
+void	up(t_instance *n)
 {
-	if (instance->map[instance->pos[0] - 1][instance->pos[1]] != '1')
+	if (n->map[n->pos[0] - 1][n->pos[1]] != '1')
 	{
-		if (instance->map[instance->pos[0] - 1][instance->pos[1]] == 'E'
-			&& instance->items == instance->count)
-			exit(0);
-		if (instance->map[instance->pos[0] - 1][instance->pos[1]] == 'C')
-			instance->count++;
-		instance->map[instance->pos[0] - 1][instance->pos[1]] = 'P';
-		if (instance->pos[0] == instance->exit[0]
-			&& instance->pos[1] == instance->exit[1])
-			instance->map[instance->pos[0]][instance->pos[1]] = 'E';
+		if ((n->map[n->pos[0] - 1][n->pos[1]] == 'E' && n->items == n->count)
+			|| n->map[n->pos[0] - 1][n->pos[1]] == 'V')
+			throw_msg(n->map[n->pos[0] - 1][n->pos[1]]);
+		if (n->map[n->pos[0] - 1][n->pos[1]] == 'C')
+			n->count++;
+		n->map[n->pos[0] - 1][n->pos[1]] = 'P';
+		if (n->pos[0] == n->exit[0] && n->pos[1] == n->exit[1])
+			n->map[n->pos[0]][n->pos[1]] = 'E';
 		else
-			instance->map[instance->pos[0]][instance->pos[1]] = '0';
-		instance->pos[0]--;
-		instance->moves++;
-		ft_printf("moves = %d\n", instance->moves);
+			n->map[n->pos[0]][n->pos[1]] = '0';
+		n->pos[0]--;
+		n->moves++;
+		info(n);
 	}
 }
 
-void	down(t_instance *instance)
+void	down(t_instance *n)
 {
-	if (instance->map[instance->pos[0] + 1][instance->pos[1]] != '1')
+	if (n->map[n->pos[0] + 1][n->pos[1]] != '1')
 	{
-		if (instance->map[instance->pos[0] + 1][instance->pos[1]] == 'E'
-			&& instance->items == instance->count)
-			exit(0);
-		if (instance->map[instance->pos[0] + 1][instance->pos[1]] == 'C')
-			instance->count++;
-		instance->map[instance->pos[0] + 1][instance->pos[1]] = 'P';
-		if (instance->pos[0] == instance->exit[0]
-			&& instance->pos[1] == instance->exit[1])
-			instance->map[instance->pos[0]][instance->pos[1]] = 'E';
+		if ((n->map[n->pos[0] + 1][n->pos[1]] == 'E' && n->items == n->count)
+			|| n->map[n->pos[0] + 1][n->pos[1]] == 'V')
+			throw_msg(n->map[n->pos[0] + 1][n->pos[1]]);
+		if (n->map[n->pos[0] + 1][n->pos[1]] == 'C')
+			n->count++;
+		n->map[n->pos[0] + 1][n->pos[1]] = 'P';
+		if (n->pos[0] == n->exit[0]
+			&& n->pos[1] == n->exit[1])
+			n->map[n->pos[0]][n->pos[1]] = 'E';
 		else
-			instance->map[instance->pos[0]][instance->pos[1]] = '0';
-		instance->pos[0]++;
-		instance->moves++;
-		ft_printf("moves = %d\n", instance->moves);
+			n->map[n->pos[0]][n->pos[1]] = '0';
+		n->pos[0]++;
+		n->moves++;
+		info(n);
 	}
 }
 
-void	left(t_instance *instance)
+void	left(t_instance *n)
 {
-	if (instance->map[instance->pos[0]][instance->pos[1] - 1] != '1')
+	if (n->map[n->pos[0]][n->pos[1] - 1] != '1')
 	{
-		if (instance->map[instance->pos[0]][instance->pos[1] - 1] == 'E'
-			&& instance->items == instance->count)
-			exit(0);
-		if (instance->map[instance->pos[0]][instance->pos[1] - 1] == 'C')
-			instance->count++;
-		instance->map[instance->pos[0]][instance->pos[1] - 1] = 'P';
-		if (instance->pos[0] == instance->exit[0]
-			&& instance->pos[1] == instance->exit[1])
-			instance->map[instance->pos[0]][instance->pos[1]] = 'E';
+		if ((n->map[n->pos[0]][n->pos[1] - 1] == 'E' && n->items == n->count)
+			|| n->map[n->pos[0]][n->pos[1] - 1] == 'V')
+			throw_msg(n->map[n->pos[0]][n->pos[1] - 1]);
+		if (n->map[n->pos[0]][n->pos[1] - 1] == 'C')
+			n->count++;
+		n->map[n->pos[0]][n->pos[1] - 1] = 'P';
+		if (n->pos[0] == n->exit[0]
+			&& n->pos[1] == n->exit[1])
+			n->map[n->pos[0]][n->pos[1]] = 'E';
 		else
-			instance->map[instance->pos[0]][instance->pos[1]] = '0';
-		instance->pos[1]--;
-		instance->moves++;
-		ft_printf("moves = %d\n", instance->moves);
+			n->map[n->pos[0]][n->pos[1]] = '0';
+		n->pos[1]--;
+		n->moves++;
+		info(n);
 	}
 }
 
-void	right(t_instance *instance)
+void	right(t_instance *n)
 {
-	if (instance->map[instance->pos[0]][instance->pos[1] + 1] != '1')
+	if (n->map[n->pos[0]][n->pos[1] + 1] != '1')
 	{
-		if (instance->map[instance->pos[0]][instance->pos[1] + 1] == 'E'
-			&& instance->items == instance->count)
-			exit(0);
-		if (instance->map[instance->pos[0]][instance->pos[1] + 1] == 'C')
-			instance->count++;
-		instance->map[instance->pos[0]][instance->pos[1] + 1] = 'P';
-		if (instance->pos[0] == instance->exit[0]
-			&& instance->pos[1] == instance->exit[1])
-			instance->map[instance->pos[0]][instance->pos[1]] = 'E';
+		if ((n->map[n->pos[0]][n->pos[1] + 1] == 'E' && n->items == n->count)
+			|| n->map[n->pos[0]][n->pos[1] + 1] == 'V')
+			throw_msg(n->map[n->pos[0]][n->pos[1] + 1]);
+		if (n->map[n->pos[0]][n->pos[1] + 1] == 'C')
+			n->count++;
+		n->map[n->pos[0]][n->pos[1] + 1] = 'P';
+		if (n->pos[0] == n->exit[0]
+			&& n->pos[1] == n->exit[1])
+			n->map[n->pos[0]][n->pos[1]] = 'E';
 		else
-			instance->map[instance->pos[0]][instance->pos[1]] = '0';
-		instance->pos[1]++;
-		instance->moves++;
-		ft_printf("moves = %d\n", instance->moves);
+			n->map[n->pos[0]][n->pos[1]] = '0';
+		n->pos[1]++;
+		n->moves++;
+		info(n);
 	}
 }

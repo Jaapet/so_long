@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:12:03 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 15:36:49 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 19:39:39 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	counter(int *count)
 		throw_error("map must contain at least 1 collectible\n");
 }
 
-static void	check_chars(t_instance *instance)
+static void	check_chars(t_instance *n)
 {
 	int	spe_chars[3];
 	int	i;
@@ -43,23 +43,23 @@ static void	check_chars(t_instance *instance)
 	spe_chars[1] = 0;
 	spe_chars[2] = 0;
 	i = 0;
-	while (i < instance->height)
+	while (i < n->height)
 	{
 		j = 0;
-		while (j < instance->width)
+		while (j < n->width)
 		{
-			if (instance->map[i][j] == 'P' || instance->map[i][j] == 'E')
-				spe_chars[instance->map[i][j] % 2]++;
-			else if (instance->map[i][j] == 'C')
+			if (n->map[i][j] == 'P' || n->map[i][j] == 'E')
+				spe_chars[n->map[i][j] % 2]++;
+			else if (n->map[i][j] == 'C')
 				spe_chars[2]++;
-			else if (instance->map[i][j] != '0' && instance->map[i][j] != '1')
+			else if (!is_valid_char(n->map[i][j]))
 				throw_error("map has an invalid character\n");
 			j++;
 		}
 		i++;
 	}
 	counter(spe_chars);
-	instance->items = spe_chars[2];
+	n->items = spe_chars[2];
 }
 
 static void	check_walls(t_instance *instance)

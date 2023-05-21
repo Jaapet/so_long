@@ -6,11 +6,19 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:39:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 13:48:38 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:45:29 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+void	info(t_instance *instance)
+{
+	ft_printf("moves = %d\n", instance->moves);
+	ft_printf("items = %d\n", instance->count);
+	ft_printf("kills = %d\n", instance->kills);
+	ft_printf("\n");
+}
 
 int	end_instance(t_instance *instance)
 {

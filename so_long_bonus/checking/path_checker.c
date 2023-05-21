@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:19:18 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 15:38:05 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:17:06 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ void	check_path(t_instance *instance)
 	check = search(copy, instance->pos[0], instance->pos[1], instance);
 	ft_free(copy, instance->height);
 	if (!check)
-		throw_error("player must reach every collectibles and exit\n");
+		throw_error(
+			"player must reach every collectibles and exit without dying\n");
 }

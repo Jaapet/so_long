@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   event_listener.c                                   :+:      :+:    :+:   */
+/*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 16:48:38 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 20:37:43 by ndesprez         ###   ########.fr       */
+/*   Created: 2023/05/21 20:27:02 by ndesprez          #+#    #+#             */
+/*   Updated: 2023/05/21 20:46:05 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	key_press(int key, t_instance *instance)
+void	attack(t_instance *n)
 {
-	if (key == 53)
-		exit(0);
-	if (key == 13)
-		up(instance);
-	if (key == 1)
-		down(instance);
-	if (key == 0)
-		left(instance);
-	if (key == 2)
-		right(instance);
-	if (key == 49)
-		attack(instance);
-	return (0);
+	int	i;
+	int	j;
+
+	i = n->pos[0] - 1;
+	while (i <= n->pos[0] + 1)
+	{
+		j = n->pos[1] - 1;
+		while (j <= n->pos[1] + 1)
+		{
+			if (n->map[i][j] == 'V')
+			{
+				n->map[i][j] = '0';
+				n->kills++;
+			}
+			j++;
+		}
+		i++;
+	}
+	n->moves++;
+	info(n);
 }
