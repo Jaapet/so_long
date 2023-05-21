@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:39:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/20 16:59:53 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/21 13:11:00 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,16 @@ void	display(t_instance *instance, int i, int j)
 	if (instance->map[i][j] == 'E')
 		put_img(instance, instance->img.exit, i, j);
 	if (instance->map[i][j] == 'P')
+	{
+		if (i == instance->exit[0] && j == instance->exit[1])
+			put_img(instance, instance->img.exit, i, j);
+		else
+			put_img(instance, instance->img.floor, i, j);
 		put_img(instance, instance->img.player, i, j);
+	}
 	if (instance->map[i][j] == 'C')
+	{
+		put_img(instance, instance->img.floor, i, j);
 		put_img(instance, instance->img.item, i, j);
+	}
 }
