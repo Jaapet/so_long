@@ -6,13 +6,14 @@
 #    By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:05:43 by ndesprez          #+#    #+#              #
-#    Updated: 2023/05/21 20:29:10 by ndesprez         ###   ########.fr        #
+#    Updated: 2023/05/23 13:41:42 by ndesprez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES	= gnl/get_next_line.c\
 	gnl/get_next_line_utils.c\
 	ft_printf/ft_printf.c\
+	ft_printf/ft_itoa.c\
 	checking/checker.c\
 	checking/path_checker.c\
 	parsing/throw.c\
@@ -24,6 +25,8 @@ SOURCES	= gnl/get_next_line.c\
 	mlx/event_listener.c\
 	mlx/moves.c\
 	mlx/actions.c\
+	mlx/init_imgs.c\
+	mlx/animations.c\
 	main.c
 
 NAME = so_long

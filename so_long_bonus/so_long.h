@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:05:00 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 20:48:38 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:35:04 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,12 @@ typedef struct s_img
 	void	*floor;
 	void	*wall;
 	void	*player;
-	void	*item;
+	void	*item[10];
+	void	*ennemy;
+	void	*kill[10];
+	void	*dead;
 	void	*exit;
+
 }	t_img;
 
 typedef struct s_game
@@ -42,8 +46,10 @@ typedef struct s_game
 	int		count;
 	int		moves;
 	int		kills;
+	int		attack;
 
 	int		frame;
+	int		anim;
 	void	*mlx;
 	void	*win;
 	t_img	img;
@@ -84,9 +90,16 @@ int			ft_strlen(char *str);
 char		*ft_strdup(const char *src);
 char		**ft_free(char **list, int len);
 void		aff_map(char **map, int height);
+char		*ft_itoa(int n);
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 /*------MLX------*/
 void		launch_mlx(t_instance *game);
+
+/*------IMG_INIT------*/
+void		init_item(t_instance *instance);
+void		init_kill(t_instance *instance);
 
 /*------MLX_UTILS------*/
 int			end_instance(t_instance *instance);
@@ -104,5 +117,8 @@ void		down(t_instance *n);
 void		left(t_instance *n);
 void		right(t_instance *n);
 void		attack(t_instance *n);
+
+/*------ANIMATIONS------*/
+void		display_kill_anim(t_instance *n);
 
 #endif

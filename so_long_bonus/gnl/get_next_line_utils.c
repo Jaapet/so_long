@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:39:51 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/19 14:41:43 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/23 13:45:32 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_strchri(const char *s, int c)
 }
 
 // concatenates char* 'src' in char* 'dst'
-static size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+static size_t	ft_strlcat_gnl(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	dstlen;
@@ -93,8 +93,8 @@ char	*ft_strjoin_bufs(char *s1, char const *s2)
 	if (!str)
 		return (NULL);
 	*str = '\0';
-	ft_strlcat(str, s1, len + 1);
-	ft_strlcat(str, s2, len + 1);
+	ft_strlcat_gnl(str, s1, len + 1);
+	ft_strlcat_gnl(str, s2, len + 1);
 	free(s1);
 	return (str);
 }

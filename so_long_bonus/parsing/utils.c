@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:14:32 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 19:38:43 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/23 13:54:13 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,19 @@ int	is_valid_char(char c)
 	if (c != '0' && c != '1' && c != 'V')
 		return (0);
 	return (1);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*str;
+	size_t	len;
+
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	*str = '\0';
+	ft_strlcat(str, s1, len + 1);
+	ft_strlcat(str, s2, len + 1);
+	return (str);
 }

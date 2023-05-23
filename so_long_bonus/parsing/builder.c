@@ -6,7 +6,7 @@
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:25:57 by ndesprez          #+#    #+#             */
-/*   Updated: 2023/05/21 20:46:28 by ndesprez         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:51:15 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,10 @@ t_instance	*build_instance(char *file)
 	instance->count = 0;
 	instance->moves = 0;
 	instance->kills = 0;
+	instance->frame = 0;
+	instance->anim = 0;
+	instance->attack = 0;
 	check_map(instance);
+	instance->map[instance->pos[0]][instance->pos[1]] = '0';
 	return (instance);
 }
